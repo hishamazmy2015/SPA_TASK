@@ -21,11 +21,6 @@
       "id": 11
     },
     {
-      "name": "dddddd",
-      "code": 3333,
-      "id": 12
-    },
-    {
       "name": "Productionserver",
       "id": 13,
       "code": 3333
@@ -81,6 +76,12 @@
       "code": "dddddddddddd",
       "category": "Productionserverddddd",
       "id": 22
+    },
+    {
+      "name": "Productionserver",
+      "code": "Productionserver",
+      "category": "Productionserver",
+      "id": 23
     }
   ],
   "categories": [
@@ -91,10 +92,6 @@
     {
       "name": "Productionserver",
       "id": 13
-    },
-    {
-      "name": "Productionserver",
-      "id": 14
     }
   ]
 }
