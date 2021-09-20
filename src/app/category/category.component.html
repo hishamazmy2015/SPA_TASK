@@ -1,0 +1,50 @@
+<p>category works!</p>
+
+<div class="row justify-content-center">
+    <div class="col-8 mt-4">
+        <h4>Add Product</h4>
+        <form [formGroup]="productForm"
+            (ngSubmit)="onSubmit()">
+
+            <div class="form-group" [ngClass]="{'is-invalid': isSubmitted &&
+                gfc.name.errors}">
+                <label for="productName">Category Name</label>
+                <input type="text"
+                    formControlName="name"
+                    name="name"
+                    id="productName"
+                    class="form-control"
+                    placeholder="Name">
+                <div class="notValid" *ngIf="gfc.name.errors?.pattern">
+                    Not Allow Characters
+                </div>
+                <div class="notValid" *ngIf="gfc.name.errors?.maxlength">
+                    code should be maximum 8 digit.
+                </div>
+            </div>
+
+            <div class="mb-3 form-group" [ngClass]="{'is-invalid': isSubmitted
+                &&
+                gfc.code.errors}">
+                <label for="productCode">Category Code</label>
+                <input type="text"
+                    name="code"
+                    formControlName="code"
+                    class="form-control"
+                    id="productCode"
+                    placeholder="Code">
+            </div>
+
+            <button class="btn btn-primary m-1"
+                [routerLink]="['/category/list']"><i class="fas fa-arrow-left"></i>
+                Back
+                To List</button>
+            <button class="btn btn-success m-1"
+                type="submit">Add Category <i class="fas fa-plus"></i></button>
+        </form>
+
+    </div>
+</div>
+
+
+<app-category-list></app-category-list>

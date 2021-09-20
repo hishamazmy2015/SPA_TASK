@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8 mt-4">
+    <h4>Products</h4>
+    <div class="text-right">
+      <button type="button"
+        class="btn btn-success"
+        [routerLink]="['/product/add']">Add New Product <i class="fas fa-plus"></i></button>
+    </div>
+
+    <ngx-datatable #mydatatable class="bootstrap" [sortType]="'multi'"
+      [headerHeight]="50" [footerHeight]="40" [rowHeight]="'auto'"
+      [rows]="products$ | async" [columnMode]="'force'" [limit]="5">
+      <ngx-datatable-column name="Product Name" prop="name">
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Product Code" prop="code">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Category" prop="category">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Actions">
+        <ng-template ngx-datatable-cell-template let-row="row" prop="id"
+          let-rowIndex="rowIndex"
+          let-value="rowVal">
+
+          <button type="button"
+            class="btn btn-info"
+            [routerLink]="['/product/get', row.id ]"><i class="fas
+              fa-search"></i></button>
+
+
+          <button type="button"
+            class="btn btn-warning"
+            [routerLink]="['/product/edit', row.id]"><i class="fas
+              fa-edit"></i></button>
+          <button type="button"
+            class="btn btn-danger"
+            (click)="deleteProduct(row.id)"><i class="fas fa-trash"></i></button>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+
+      <ngx-datatable-column name="status" prop="id">
+        <ng-template ngx-datatable-cell-template let-value="value"
+          let-row="row">
+          <span>
+            <i *ngIf="value == 1" class="fa fa-check-circle"
+              aria-hidden="true"></i>
+          </span>
+          <span>
+            <i class="fa fa-times" aria-hidden="true" *ngIf="value != 1"></i>
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+    </ngx-datatable>
+
+  </div>
+</div>

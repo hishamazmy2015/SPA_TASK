@@ -1,0 +1,46 @@
+
+.table {
+  tr {
+    th {
+      border-top: none !important;
+      font-size: 13px;
+      font-weight: 600;
+      color: #7f7f7f;
+    }
+    td {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
+.accnt-trans-table {
+  .ngx-datatable {
+    overflow-x: hidden;
+    .visible {
+      overflow: hidden;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 6px;
+      }
+    }
+    .datatable-header {
+      overflow: unset;
+      right: 0px;
+    }
+    .datatable-body {
+      margin-bottom: 60px;
+      right: 0px;
+    }
+    .datatable-footer {
+      position: absolute;
+      right: 0px;
+      bottom: 14px;
+    }
+    img {
+      max-width: 24px;
+      max-height: 24px;
+    }
+  }
+}

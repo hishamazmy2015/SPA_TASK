@@ -1,0 +1,39 @@
+
+.field.error,
+.input.error,
+.error,
+.is-invalid,
+ng-select.is-invalid {
+    input, .ui.dropdown,
+    .ng-select-container {
+        border: 1px solid rgba(red, 0.84) !important;
+        // background-color: rgba($cancel-bg-color, 0.45) !important;
+        background-color: transparent;
+        transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        // color: rgba($cancel-text-color, 0.6) !important;
+        color: black;
+        &::placeholder {
+            // color: rgba($cancel-text-color, 0.6) !important;
+            color: black;
+            // opacity: .8;
+        }
+        &:hover, &:active, &:focus {
+            border-bottom: 1px solid rgba(red, 0.84) !important;
+        }
+        .ng-value-container {
+            .ng-input > input {
+                background: transparent !important;
+            }
+            .ng-placeholder {
+                // color: rgba($cancel-text-color, 0.6) !important;
+                color: black;
+            }
+        }
+    }
+}
+
+.input.error, .is-invalid input {
+  &::placeholder {
+    color: #ff0000b5 !important;
+  }
+}
