@@ -14,8 +14,9 @@
           id="productName"
           class="form-control"
           placeholder="Name">
-        <div class="notValid" *ngIf="gfc.name.errors?.pattern">
-          code should be maximum 8 digit.
+        <div class="notValid" *ngIf="isSubmitted && gfc.name.errors?.required">
+       <span style="color: red;"> Name is Required ! </span>
+
         </div>
         <div class="notValid" *ngIf="gfc.name.errors?.maxlength">
           code should be maximum 8 digit.
@@ -32,6 +33,10 @@
           id="productCode"
           placeholder="Code">
       </div>
+      <div class="notValid" *ngIf="isSubmitted && gfc.code.errors?.required ">
+       <span style="color: red;"> Code is Required ! </span>
+      </div>
+      <br>
       <div class="mb-3 form-group">
 
         <select formControlName="category" class="form-control">

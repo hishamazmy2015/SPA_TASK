@@ -41,10 +41,7 @@ export class ProductAddComponent implements OnInit {
         Validators.required,
         Validators.minLength(6),
       ]),
-      category: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(6),
-      ]),
+      category: new FormControl(null, [Validators.required]),
     });
   }
   get gfc() {
@@ -52,6 +49,7 @@ export class ProductAddComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.productForm);
     this.isSubmitted = true;
     if (!this.productForm.valid) {
       return;
